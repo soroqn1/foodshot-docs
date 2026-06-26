@@ -42,3 +42,4 @@
 ## 5. Scope Boundaries (Out of Scope for MVP)
 - Continuous Glucose Monitor (CGM) API integrations (Dexcom, Libre) - will rely on manual input or basic exports first.
 - Complex multi-component meal splitting (handling 3+ distinct dishes without grouping).
+
