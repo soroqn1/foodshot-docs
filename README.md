@@ -10,12 +10,12 @@ Incoming food photos are processed by OpenAI (GPT-4o) solely to extract the dish
 
 ## Tech stack
 
-- **Language:** Python 3.11–3.13, Poetry
+- **Language & Tooling:** Python 3.11–3.13, Poetry, Ruff, Taskfile
 - **Bot Framework:** aiogram 3.x (FSM, Handlers, i18n with EN/UK locales)
+- **External Services:** OpenAI API (GPT-4o Vision), USDA FoodData Central API
 - **Webhooks & API:** FastAPI
-- **Database:** PostgreSQL + async SQLAlchemy (users, meal logs)
-- **Cache & State:** Redis
-- **Infrastructure:** Docker, Docker Compose, Taskfile
+- **Database & Cache:** PostgreSQL + async SQLAlchemy, Redis
+- **Infrastructure & Hosting:** Docker, Docker Compose, Oracle Cloud, Cloudflare Tunnel (secure webhooks), Custom Domain & DNS
 
 ## What it does
 
