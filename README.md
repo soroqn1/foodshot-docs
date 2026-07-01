@@ -48,5 +48,5 @@ Currently being tested by a community whitelist. Core data pipelines and exports
 
 ---
 
-**Built by:** [soroqn1](https://github.com/soroqn1)  
+**Built by:** [soroqn1](https://github.com/soroqn1) · [LinkedIn](https://www.linkedin.com/in/yaroslav-sorochan-8098231b1/)  
 *If you're a founder, engineer, or health-tech enthusiast—feel free to reach out.*
