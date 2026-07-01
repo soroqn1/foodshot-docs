@@ -8,6 +8,25 @@ A Telegram bot that logs food intake via photo recognition, maps it against 300,
 
 Incoming food photos are processed by OpenAI (GPT-4o) solely to extract the dish name and estimated weight. This textual output is then mapped against the USDA FoodData Central API to retrieve exact macronutrients. This hard boundary is crucial: zero LLM hallucinations for nutrition facts, and zero AI medical advice.
 
+## How the bolus calculation works
+No AI involved — pure, transparent math:
+
+```python
+def calculate_bolus(carbs, icr, isf, target_bg, current_bg=None):
+    carb_dose = carbs / icr
+    correction_dose = 0.0
+    if current_bg is not None and current_bg > target_bg:
+        correction_dose = (current_bg - target_bg) / isf
+    return {
+        "carb_dose": round(carb_dose, 1),
+        "correction_dose": round(correction_dose, 1),
+        "total_dose": round(carb_dose + correction_dose, 1),
+    }
+```
+
+1. **Carb dose** = Carbs ÷ ICR
+2. **Correction dose** = (Current BG − Target BG) ÷ ISF, applied only if current BG is above target
+
 ## Tech stack
 
 - **Language & Tooling:** Python 3.11–3.13, Poetry, Ruff, Taskfile
